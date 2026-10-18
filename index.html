@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sur Privacy and Terms</title>
+<meta name="description" content="Privacy policy and terms of use for Sur, a guitar and chromatic tuner app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; a cents-meter scale as the masthead rule; the two documents stacked, each deep-linkable (#privacy, #terms). */
+:root {
+  --bg: #F6F7F5;
+  --surface: #FFFFFF;
+  --fg: #171B22;
+  --muted: #5B6472;
+  --line: #DDE2E0;
+  --accent: #0E8A62;
+  --accent-soft: #E3F4EC;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1116; --surface: #171B22; --fg: #F2F4F7; --muted: #9AA3B2;
+    --line: #262C36; --accent: #34D399; --accent-soft: #13291F; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1116; --surface: #171B22; --fg: #F2F4F7; --muted: #9AA3B2;
+  --line: #262C36; --accent: #34D399; --accent-soft: #13291F; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+.wrap { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+
+header { display: flex; flex-direction: column; gap: 18px; }
+.brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.brand h1 {
+  font-family: var(--font-display); font-weight: 650; font-size: 56px; line-height: 1;
+  letter-spacing: -0.02em; margin: 0;
+}
+.brand span { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.scale { width: 100%; height: 34px; display: block; color: var(--muted); }
+.scale .zero { color: var(--accent); }
+.lede { margin: 0; color: var(--muted); max-width: 58ch; }
+
+nav { display: flex; gap: 8px; flex-wrap: wrap; }
+nav a {
+  font-family: var(--font-display); font-weight: 500; font-size: 15px;
+  color: var(--fg); text-decoration: none;
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; background: var(--surface);
+}
+nav a:hover { border-color: var(--accent); }
+nav a:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.summary {
+  background: var(--accent-soft); border-radius: 14px; padding: 20px 22px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px 24px;
+}
+.summary div { min-width: 0; }
+.summary dt { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.summary dd { margin: 2px 0 0; font-size: 15px; line-height: 1.45; }
+
+section { display: flex; flex-direction: column; gap: 4px; scroll-margin-top: 24px; }
+section > h2 {
+  font-family: var(--font-display); font-weight: 650; font-size: 32px; line-height: 1.15;
+  letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+.meta { font-family: var(--font-mono); font-size: 13px; color: var(--muted); margin: 4px 0 12px; }
+h3 { font-family: var(--font-display); font-weight: 650; font-size: 20px; margin: 22px 0 2px; text-wrap: balance; }
+p, ul { margin: 6px 0; }
+ul { padding-left: 1.2em; }
+li + li { margin-top: 4px; }
+code, .mono { font-family: var(--font-mono); font-size: 0.88em; }
+a { color: var(--accent); }
+strong { font-weight: 700; }
+
+.contact {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: 12px 14px; margin-top: 8px;
+}
+.contact .mono { user-select: all; word-break: break-all; min-width: 0; }
+.contact button {
+  font: 500 14px var(--font-display); color: var(--fg); background: transparent;
+  border: 1px solid var(--line); border-radius: 8px; padding: 5px 12px; cursor: pointer;
+}
+.contact button:hover { border-color: var(--accent); }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
+footer { font-size: 14px; color: var(--muted); }
+
+@media (max-width: 480px) {
+  body { font-size: 16px; padding-block: 28px 48px; }
+  .brand h1 { font-size: 44px; }
+  section > h2 { font-size: 27px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>Sur</h1>
+      <span>guitar and chromatic tuner · A4 = 440 Hz</span>
+    </div>
+    <svg class="scale" viewBox="0 0 680 34" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1">
+        <line x1="1" y1="9" x2="1" y2="25"/><line x1="35" y1="13" x2="35" y2="21"/><line x1="69" y1="13" x2="69" y2="21"/><line x1="103" y1="13" x2="103" y2="21"/><line x1="137" y1="13" x2="137" y2="21"/>
+        <line x1="171" y1="9" x2="171" y2="25"/><line x1="205" y1="13" x2="205" y2="21"/><line x1="239" y1="13" x2="239" y2="21"/><line x1="273" y1="13" x2="273" y2="21"/><line x1="307" y1="13" x2="307" y2="21"/>
+        <line x1="373" y1="13" x2="373" y2="21"/><line x1="407" y1="13" x2="407" y2="21"/><line x1="441" y1="13" x2="441" y2="21"/><line x1="475" y1="13" x2="475" y2="21"/>
+        <line x1="509" y1="9" x2="509" y2="25"/><line x1="543" y1="13" x2="543" y2="21"/><line x1="577" y1="13" x2="577" y2="21"/><line x1="611" y1="13" x2="611" y2="21"/><line x1="645" y1="13" x2="645" y2="21"/>
+        <line x1="679" y1="9" x2="679" y2="25"/>
+      </g>
+      <rect class="zero" x="338" y="2" width="4" height="30" rx="2" fill="currentColor"/>
+    </svg>
+    <p class="lede">Sur listens to your instrument through the microphone and shows how far it is from the target note. Here is exactly what that means for your privacy, and the terms for using the app.</p>
+    <nav aria-label="Documents">
+      <a href="#privacy">Privacy policy</a>
+      <a href="#terms">Terms of use</a>
+    </nav>
+  </header>
+
+  <dl class="summary" aria-label="Privacy at a glance">
+    <div><dt>Microphone audio</dt><dd>Analysed on your phone, then discarded. Never recorded, stored or sent.</dd></div>
+    <div><dt>Personal data</dt><dd>None collected. No account, sign-in or profile.</dd></div>
+    <div><dt>Tracking and ads</dt><dd>No analytics, no advertising, no tracking SDKs.</dd></div>
+    <div><dt>Internet</dt><dd>Not needed for tuning. The app works offline.</dd></div>
+  </dl>
+
+  <section id="privacy" aria-labelledby="privacy-h">
+    <h2 id="privacy-h">Privacy policy</h2>
+    <p class="meta">Effective 18 October 2026</p>
+
+    <p>This policy explains how the Sur app for Android and iOS (“Sur”, “the app”, “we”, “us”) handles information. The short version: Sur does not collect, store or share any personal data.</p>
+
+    <h3>How the microphone is used</h3>
+    <p>Sur needs microphone access to measure the pitch of your instrument. While tuning is switched on:</p>
+    <ul>
+      <li>Audio is processed in memory on your device, in short windows of about 85 milliseconds, to calculate a frequency and a deviation in cents.</li>
+      <li>Each window is discarded as soon as it has been analysed. Sur never writes audio to a file and never sends audio, or anything derived from it, off your device.</li>
+      <li>The microphone is active only after you tap <strong>Start tuning</strong>, and stops when you tap <strong>Stop</strong> or leave the app.</li>
+    </ul>
+
+    <h3>Information we collect</h3>
+    <p>None. Sur has no accounts and does not ask for your name, email, contacts, location or any other personal information. It contains no analytics, crash-reporting, advertising or tracking software, and it does not use device identifiers to follow you across apps or websites.</p>
+
+    <h3>Settings on your device</h3>
+    <p>Choices you make in the app, such as tuner mode or a locked string, may be kept on your device so the app remembers them. They stay on your device and are removed when you uninstall Sur.</p>
+
+    <h3>Optional purchases</h3>
+    <p>Sur may offer optional in-app purchases, such as a tip or a Pro upgrade. These are processed entirely by Google Play or the Apple App Store under their own terms and privacy policies. We never receive your card or bank details. The store tells the app only whether a purchase was made, so it can unlock what you paid for.</p>
+    <p>If a future version adds any service that handles purchase records or other data, we will update this policy before that version is released.</p>
+
+    <h3>Permissions</h3>
+    <ul>
+      <li><strong>Microphone</strong> (<code>RECORD_AUDIO</code> on Android, Microphone on iOS): required for tuning, used only as described above.</li>
+    </ul>
+    <p>You can turn microphone access off at any time in your phone’s settings. Tuning will not work without it, but nothing else changes.</p>
+
+    <h3>Children</h3>
+    <p>Sur is suitable for players of all ages. Because the app collects no personal data from anyone, it collects none from children.</p>
+
+    <h3>Your rights</h3>
+    <p>Data protection laws, including India’s Digital Personal Data Protection Act, 2023 and the GDPR, give you rights to access, correct and delete your personal data. Since Sur holds no personal data about you, there is nothing to access or delete. You are still welcome to contact us with any question or concern, and we will respond within 30 days.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>If we change how Sur handles information, we will update this page and its effective date, and mention the change in the app’s release notes.</p>
+
+    <h3>Contact</h3>
+    <p>Questions or grievances about privacy:</p>
+    <div class="contact">
+      <span class="mono" id="email-privacy">arjun.sisodia8@gmail.com</span>
+      <button type="button" id="copy-privacy" data-copy="email-privacy">Copy</button>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="terms" aria-labelledby="terms-h">
+    <h2 id="terms-h">Terms of use</h2>
+    <p class="meta">Effective 18 October 2026</p>
+
+    <p>These terms apply when you download or use Sur. By using the app you agree to them. If you don’t agree, please don’t use the app.</p>
+
+    <h3>Licence</h3>
+    <p>We give you a personal, non-exclusive, non-transferable licence to use Sur on devices you own or control. The terms of the store you downloaded it from (Google Play or the Apple App Store) also apply. Where they conflict with these terms, the store’s terms take priority for matters they cover.</p>
+
+    <h3>Fair use</h3>
+    <p>Please don’t copy, resell or redistribute the app, remove its notices, or use it to break any law. The app’s name, design and code belong to its developer.</p>
+
+    <h3>Purchases and refunds</h3>
+    <p>The core tuner is free. Any optional purchase is a one-time payment made through Google Play or the App Store. Refunds are handled by the store under its own refund policy. A tip is a voluntary gift and does not unlock extra features unless the purchase screen says it does.</p>
+
+    <h3>Accuracy</h3>
+    <p>Sur is designed to measure pitch to a fraction of a cent, but real readings depend on your phone’s microphone, background noise and the instrument itself. Use it as a tuning aid. Tune up to pitch gradually: strings can snap if they are over-tightened, and we are not responsible for broken strings or damage to an instrument.</p>
+
+    <h3>No warranty</h3>
+    <p>The app is provided “as is” and “as available”, without warranties of any kind, to the extent the law allows. We don’t promise that it will be error-free or always available, or that it will work on every device.</p>
+
+    <h3>Limitation of liability</h3>
+    <p>To the extent the law allows, we are not liable for any indirect, incidental or consequential loss arising from your use of Sur. Our total liability for any claim is limited to the amount you paid for the app or in-app purchases in the 12 months before the claim. Nothing in these terms limits rights you have that cannot be limited by law.</p>
+
+    <h3>Changes and ending</h3>
+    <p>We may update the app or these terms. If a change is significant, we will mention it in the release notes. You can stop using Sur at any time by uninstalling it.</p>
+
+    <h3>Governing law</h3>
+    <p>These terms are governed by the laws of India.</p>
+
+    <h3>Contact</h3>
+    <div class="contact">
+      <span class="mono" id="email-terms">arjun.sisodia8@gmail.com</span>
+      <button type="button" id="copy-terms" data-copy="email-terms">Copy</button>
+    </div>
+  </section>
+
+  <footer>Sur · Privacy policy and terms of use · Last updated 18 October 2026</footer>
+</div>
+
+<script>
+  document.querySelectorAll('button[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.getAttribute('data-copy'));
+      var text = el.textContent.trim();
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+      var select = function () {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selected';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+      };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, select);
+        else select();
+      } catch (e) { select(); }
+    });
+  });
+  if (location.hash === '#privacy' || location.hash === '#terms') {
+    var target = document.querySelector(location.hash);
+    if (target) setTimeout(function () { target.scrollIntoView(); }, 0);
+  }
+</script>
+</body>
+</html>
